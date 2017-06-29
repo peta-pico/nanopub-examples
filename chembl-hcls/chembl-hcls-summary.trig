@@ -1,0 +1,77 @@
+@prefix this: <http://purl.org/np/RAq20KleadvIv-ssT5lXwdEUbpCy_yYDysucuQFSnEqpI> .
+@prefix sub: <http://purl.org/np/RAq20KleadvIv-ssT5lXwdEUbpCy_yYDysucuQFSnEqpI#> .
+@prefix c: <http://rdf.ebi.ac.uk/chembl/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dctypes: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix freq: <http://purl.org/cld/freq/> .
+@prefix idot: <http://identifiers.org/idot/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix void: <http://rdfs.org/ns/void/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	c:chembl idot:alternatePrefix "chembldb" ;
+		idot:preferredPrefix "chembl" ;
+		dct:accrualPeriodicity freq:quarterly ;
+		dct:alternative "ChEMBLdb"@en ;
+		dct:description """ChEMBL is a database of bioactive compounds, their quantitative properties and 
+      bioactivities (binding constants, pharmacology and ADMET, etc). The data is abstracted and curated 
+      from the primary scientific literature."""@en ;
+		dct:hasPart c:chembl17_rdf_molecule_dataset , c:chembl17_rdf_target_dataset ;
+		dct:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+		dct:publisher c:ebi ;
+		dct:references <http://dx.doi.org/10.1093/bioinformatics/btt765> ;
+		dct:rights """The data in ChEMBL is covered by the Creative Commons By Attribution. Under the -BY clause, 
+      we request attribution for subsequent use of ChEMBL. For publications using ChEMBL data, the primary 
+      current citation is:
+
+  1. A. Gaulton, L. Bellis, J. Chambers, M. Davies, A. Hersey, Y. Light, S. McGlinchey, R. Akhtar, A.P. Bento, 
+  B. Al-Lazikani, D. Michalovich, & J.P. Overington (2012) 'ChEMBL: A Large-scale Bioactivity Database For Chemical 
+  Biology and Drug Discovery' Nucl. Acids Res. Database Issue. 40 D1100-1107 DOI:10.1093/nar/gkr777 PMID:21948594
+
+  If ChEMBL is incorporated into other works, we ask that the ChEMBL IDs are preserved, and that the release 
+  number of ChEMBL is clearly displayed."""@en ;
+		dct:title "ChEMBL"@en ;
+		pav:hasCurrentVersion c:chembl17 ;
+		cito:citesAsAuthority <http://nar.oxfordjournals.org/content/40/D1/D1100> ;
+		void:sparqlEndpoint <https://www.ebi.ac.uk/rdf/services/chembl/sparql> ;
+		schemaorg:logo <http://www.ebi.ac.uk/rdf/sites/ebi.ac.uk.rdf/files/resize/images/rdf/chembl_service_logo-146x48.gif> ;
+		a dctypes:Dataset ;
+		rdfs:seeAlso <http://en.wikipedia.org/wiki/ChEMBL> ;
+		dcat:accessURL <ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb> ;
+		dcat:keyword "assay" , "chemical" ;
+		dcat:theme ncit:C48807 ;
+		foaf:page <http://www.ebi.ac.uk/chembl/> .
+	
+	c:ebi foaf:page <https://www.ebi.ac.uk/chembl/> .
+}
+
+sub:provenance {
+	sub:assertion prov:hadPrimarySource <https://www.w3.org/TR/hcls-dataset/#appendix_1> .
+}
+
+sub:pubinfo {
+	sub:signature.MCwCFBMHVzEhDKCv npx:hasPublicKey "MIIBtzCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2EbdSPO9EAMMeP4C2USZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7ECLCT7up1/63xhv4O1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUAl2BQjxUjC8yykrmCouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCBgLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhRkImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoDgYQAAoGAEHvFRpU7ryp1gAOi2yoy2VX8jraJdwPo6ZC1idtsGVcmou89Y3KOoJmlW3VU8ZPolpVWuM+EPNmLNFmifYr+svu8AOQkilZBLdkS5BrPVxIpV0dLeaBUroof1wPsVuwEPOdNzWsEmPF1Az8qLGEdPbyn7ehWqO/lNVmW8+c4O2k=" ;
+		npx:hasSignature "MCwCFBMHVzEhDKCvf610NaHUPPPr2DlyAhQ27N5l1p/OccAN3gZLsqOs+AXFmQ==" .
+	
+	this: dct:created "2017-07-29T14:24:52+02:00"^^xsd:dateTime ;
+		npx:hasSignatureElement sub:signature.MCwCFBMHVzEhDKCv ;
+		pav:createdBy <http://orcid.org/0000-0002-1267-0234> ;
+		a npx:ExampleNanopub .
+}
