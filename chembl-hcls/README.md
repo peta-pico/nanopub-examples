@@ -4,7 +4,9 @@ ChEMBL HCLI Dataset Descriptions as Nanopublications
 These are examples of nanopublications extracted from the
 [HCLI specification](https://www.w3.org/TR/hcls-dataset/#appendix_1).
 
-The nanopublication [chembl-hcls-summary](chembl-hcls-summary.trig) introduces the dataset at the **summary** level, by establishing the following three types of identifiers:
+The nanopublication [chembl-hcls-summary](chembl-hcls-summary.trig) introduces
+the dataset at the **summary** level, by establishing the following three types
+of identifiers:
 
 - It introduces the identifier of the dataset at the summary level:
   `http://rdf.ebi.ac.uk/chembl/chembl`
@@ -17,7 +19,9 @@ The nanopublication [chembl-hcls-summary](chembl-hcls-summary.trig) introduces t
   public key mentioned above:
   `MCwCFBMHVzEhDKCvf610NaHUPPPr2DlyAhQ27N5l1p/OccAN3gZLsqOs+AXFmQ==`
 
-The nanopublication [chembl-hcls-summary](chembl-hcls-version.trig) introduces the dataset at the **version** level, by establishing the following three types of identifiers:
+The nanopublication [chembl-hcls-version](chembl-hcls-version.trig) introduces
+the dataset at the **version** level, by establishing the following three types
+of identifiers:
 
 - It introduces the identifier of a version of the given dataset:
   `http://rdf.ebi.ac.uk/chembl/chembl17`
