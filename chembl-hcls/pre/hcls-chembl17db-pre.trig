@@ -31,13 +31,13 @@
 }
 
 :assertion {
-  c:chembl17
-      rdf:type dctypes:Dataset;
-      dct:title "ChEMBL Version 17"@en ;
-      dct:alternative "ChEMBLdb17"@en ;
-      dct:description "ChEMBL17 is a database of bioactive compounds, their quantitative properties and 
-      bioactivities (binding constants, pharmacology and ADMET, etc). The data is abstracted and curated 
-      from the primary scientific literature."@en ;
+  c:chembl17db
+      a dctypes:Dataset, dcat:Distribution ;
+      dct:title "ChEMBL Version 17 Database Distribution"@en ;
+      dct:alternative "ChEMBLdb17db"@en ;
+      dct:description "ChEMBL17 database distribution is a database of bioactive compounds, their quantitative properties 
+      and bioactivities (binding constants, pharmacology and ADMET, etc). The data is abstracted and curated from the 
+      primary scientific literature."@en ;
       dct:created "2013-08"^^xsd:gYearMonth;
       pav:createdOn "2013-08"^^xsd:gYearMonth;
       pav:authoredOn "2013-07"^^xsd:gYearMonth;
@@ -60,8 +60,8 @@
   B. Al-Lazikani, D. Michalovich, & J.P. Overington (2012) 'ChEMBL: A Large-scale Bioactivity Database For Chemical 
   Biology and Drug Discovery' Nucl. Acids Res. Database Issue. 40 D1100-1107 DOI:10.1093/nar/gkr777 PMID:21948594
 
-  If ChEMBL is incorporated into other works, we ask that the ChEMBL IDs are preserved, and that the release number 
-  of ChEMBL is clearly displayed."""@en ;
+  If ChEMBL is incorporated into other works, we ask that the ChEMBL IDs are preserved, and that the release 
+  number of ChEMBL is clearly displayed."""@en ;
       dct:language <http://lexvo.org/id/iso639-3/eng> ;
       dcat:theme ncit:C48807 ;
       dcat:keyword "assay"^^xsd:string, "chemical"^^xsd:string ;
@@ -69,24 +69,25 @@
       dct:references <http://dx.doi.org/10.1093/bioinformatics/btt765> ;
       rdfs:seeAlso <http://en.wikipedia.org/wiki/ChEMBL> ;
       cito:citesAsAuthority <http://nar.oxfordjournals.org/content/40/D1/D1100> ;
-      dct:hasPart c:chembl17_rdf_molecule_dataset, c:chembl17_rdf_target_dataset ;
-  #Identifiers
       idot:preferredPrefix "chembl" ;
       idot:alternatePrefix "chembldb" ;
-  #Provenance and Change
+      idot:identifierPattern "CHEMBL\\d+"^^xsd:string ;
+      idot:accessPattern "http://bio2rdf.org/chembl", 
+      	"http://identifiers.org/chembl.compound/", 
+      	"http://linkedchemistry.info/chembl/chemblid", 
+      	"http://www.ebi.ac.uk/chembl/compound/inspect/" ;
+      idot:exampleIdentifier "CHEMBL25"^^xsd:string ;
       pav:version "17"^^xsd:string, "17.0" ;
-      dct:isVersionOf c:chembl ;
-      pav:previousVersion c:chembl16 ;
+      pav:previousVersion c:chembl16db ;
       dct:source c:pubchem-bioassay-09-01-2014 ;
-      pav:retrievedFrom c:pubchem-bioassay-09-01-2014 ;
-      prov:wasDerivedFrom c:pubchem-bioassay-09-01-2014 ;
-  #Availability/Distributions
-      dcat:distribution c:chembl17db, c:chembl17rdf ;
+      pav:retrievedFrom <http://example.com/madeUp/forExample> ;
+      prov:wasDerivedFrom <http://example.com/madeUp/forExample> ;
+      pav:createdWith <http://example.com/madeUp/editor> ;
+      dct:format "application/sql" ;
       dcat:accessURL <ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_17/> ;
       dcat:landingPage <ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_17/chembl_17_release_notes.txt> ;
-  .
-
-  c:annaGaulton foaf:name "Anna Gaulton" .
+      dcat:downloadURL <ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_17/chembl_17_mysql.tar.gz?FALgwCA0igFio7SskCQIMpEZIuL2fxAsP6GccWi2MI8Zs> ;
+      dcat:byteSize "861443887"^^xsd:decimal .
 }
 
 :provenance {
